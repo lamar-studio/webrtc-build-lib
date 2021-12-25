@@ -1,4 +1,4 @@
-﻿
+
 #include <iostream>
 #include "scoped_refptr.h"
 #include "ref_count.h"
@@ -45,6 +45,7 @@ void func(scoped_refptr<A> sp)
 int main()
 {
 	//new class,but no need del
+	//RefCountedObject add the counter for A
 	scoped_refptr<A> sp = new RefCountedObject<A>(100);
 
 	//get class addr

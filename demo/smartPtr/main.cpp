@@ -7,7 +7,7 @@
 using namespace std;
 using namespace rtc;
 
-class A : public RefCountInterface       /*需要继承自类RefCountInterface*/
+class A : public RefCountInterface
 {
 public:
 	A(int i)
@@ -44,10 +44,10 @@ void func(scoped_refptr<A> sp)
 
 int main()
 {
-	/*只见new，不见delete。*/
+	//new class,but no need del
 	scoped_refptr<A> sp = new RefCountedObject<A>(100);
 
-	/*获取托管对象的地址*/
+	//get class addr
 	cout << "sp = " << sp.get() << endl;
 
 	sp->display();
